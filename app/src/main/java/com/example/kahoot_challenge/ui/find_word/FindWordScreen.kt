@@ -20,13 +20,11 @@ import com.example.kahoot_challenge.TrieViewModel
 @Composable
 fun FindWordScreen(navController: NavHostController, trieViewModel: TrieViewModel) {
 
-
     var textState by remember { mutableStateOf(TextFieldValue("")) }
 
     val wordsList by derivedStateOf {
         trieViewModel.trie.autocomplete(textState.text)
     }
-
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -56,10 +54,10 @@ fun FindWordScreen(navController: NavHostController, trieViewModel: TrieViewMode
         }
 
         Spacer(modifier = Modifier.height(16.dp))
-        
+
         Button(onClick = { navController.popBackStack() }) {
             Text(text = "GO BACK")
         }
-        
+
     }
 }

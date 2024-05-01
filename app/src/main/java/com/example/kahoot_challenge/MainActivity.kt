@@ -19,8 +19,7 @@ import com.example.kahoot_challenge.ui.theme.Kahoot_challengeTheme
 import com.example.kahoot_challenge.ui.home.HomeScreen
 
 
-class TrieViewModel: ViewModel()
-{
+class TrieViewModel : ViewModel() {
     val trie = Trie().apply {
         insert("car")
         insert("carpet")

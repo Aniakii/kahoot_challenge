@@ -51,7 +51,7 @@ fun AddWordScreen(navController: NavHostController, trieViewModel: TrieViewModel
         Spacer(modifier = Modifier.height(16.dp))
         Text(text = validateText, color = validateColor)
         Spacer(modifier = Modifier.height(16.dp))
-        Row (
+        Row(
 
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
@@ -66,13 +66,11 @@ fun AddWordScreen(navController: NavHostController, trieViewModel: TrieViewModel
             Spacer(modifier = Modifier.width(16.dp))
             Button(
                 onClick = {
-                    if (validateWord(textState.text))
-                    {
+                    if (validateWord(textState.text)) {
                         trieViewModel.trie.insert(textState.text.toLowerCase())
                         validateText = "Word has been successfully added"
                         validateColor = Color.Green
-                    } else
-                    {
+                    } else {
                         validateText = "Enter a word that contains only alphabetical letters"
                         validateColor = Color.Red
                     }
@@ -87,8 +85,7 @@ fun AddWordScreen(navController: NavHostController, trieViewModel: TrieViewModel
 }
 
 
-fun validateWord(word: String): Boolean
-{
+fun validateWord(word: String): Boolean {
     val regex = "^[a-zA-Z]+$".toRegex()
     return regex.matches(word)
 }

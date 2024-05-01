@@ -35,6 +35,7 @@ class Trie {
         return results
     }
 
+
     fun autocomplete(query: String): List<String> {
         val node = searchPrefix(query)
         return node?.let { getWords(it, query) } ?: emptyList()
