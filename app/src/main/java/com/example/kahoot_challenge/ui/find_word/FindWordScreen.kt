@@ -30,6 +30,7 @@ fun FindWordScreen(navController: NavHostController, trieViewModel: TrieViewMode
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .fillMaxSize()
+            .padding(bottom = 16.dp)
     ) {
         TextField(
             value = textState,
@@ -40,7 +41,9 @@ fun FindWordScreen(navController: NavHostController, trieViewModel: TrieViewMode
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        LazyColumn {
+        LazyColumn(
+            modifier = Modifier.weight(1f)
+        ) {
             if (wordsList.isEmpty()) {
                 item {
                     Text("No results found", style = MaterialTheme.typography.bodyMedium)
